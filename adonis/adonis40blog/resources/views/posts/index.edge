@@ -1,0 +1,14 @@
+@layout('main')
+@section('content')
+<h1>POSTS.INDEX</h1>
+@if(old('notification'))
+<div class="alert alert-success">
+    {{old('notification')}}
+</div>
+@endif
+<ul class="list-group">
+    @each(post in posts)
+    <li class="list-group-item"><a href="/post/{{post.id}}"> {{post.title}} </a></li>
+    @endeach
+</ul>
+@endsection
